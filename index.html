@@ -2,12 +2,11 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name='author' content='rifqi'>
-    <meta name='description' content='web portofolio pertama'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="rifqi"
     <title>Portofolio</title>
     <style>
-        @keyframes animasi1  {
+      @keyframes animasi1  {
     from {
         transform: translateX(-30%);
         opacity: 0;
@@ -27,18 +26,10 @@
         opacity: 1;
     }
 }
-@keyframes animasi3  {
-    from {
-        transform: translateX(0);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+
+.hidden {
+  display: none;
 }
-
-
 
 body {
     background: #032939;
@@ -49,6 +40,7 @@ body {
     background-attachment: fixed; 
     min-height: 100vh;
     overflow-x: hidden;
+    color: white;
 }
 
 #judul {
@@ -56,26 +48,19 @@ body {
     position: absolute;
     margin: 3px;
     font-weight: bold;
-    color: #ffffff;
 }
+
 span {
     color: aqua;
 }
-p {
-    color: white;
-    font-weight: bold;
+
+
+h1, h3, p {
     font-family: sans-serif;
-}
-a {
-    display: flex;
-    margin: 5px;
 }
 
-h1 {
-    font-family: sans-serif;
-}
-h4 {
-    font-family: sans-serif;
+.introduction {
+  animation: animasi1 1s ease-out forwards;
 }
 
 #buttonContainer {
@@ -85,18 +70,7 @@ h4 {
     padding: 0;
     height: 20px;
 }
-#homeButton, #aboutButton, #skillButton, #projectButton, #contactButton  {
-    border: none;
-    background: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 11px;
-    transition: transform 0.3s ease-out, color 0.2s;
-    outline: none;
-}
-#character {
-    display: none;
-}
+
 #character  img {
     max-width: 100%;
     width: 350px;
@@ -106,91 +80,32 @@ h4 {
     animation: animasi2 1.5s ease-out forwards;
 }
 
-#homeButton:hover {
-    transform: translateY(-3px);
-    color: aqua;
-}
-#aboutButton:hover {
-    transform: translateY(-3px);
-    color: aqua;
-}
-#skillButton:hover {
-    transform: translateY(-3px);
-    color: aqua;
-}
-#projectButton:hover {
-    transform: translateY(-3px);
-    color: aqua;
-}
-#contactButton:hover {
-    transform: translateY(-3px);
-    color: aqua;
-}
-
-
-
-
-#homeSlide {
-    display: none;
-    position: absolute;
-    top: 50px;
+button {
+    border: none;
+    background: none;
     color: #ffffff;
-    animation: animasi1 1s ease-out forwards;
-}    
-
-#aboutSlide {
-    display: none;
-    font-size: 15px;
-    margin: 50px auto;
     font-weight: bold;
-    animation: animasi1 1s ease-out forwards;
-}
-#imageAbout {
-    display: none;
-    animation: animasi2 1s ease-out forwards;
-}
-#imageAbout img {
-    max-width: 100%;
-    height: auto;
-    width: 130px;
+    transition: transform 0.3s ease-out, color 0.2s;
+    outline: none;
 }
 
-#skillSlide {
-    display: none;
-    font-size: 15px;
-    margin: 50px auto;
-    font-weight: bold;
-    animation: animasi1 1s ease-out forwards;
+button:hover {
+    transform: translateY(-3px);
+    color: aqua;
 }
 
-#projectSlide {
-    display: none;
-    animation: animasi1 1s ease-out forwards;
+#aboutSlide, #skillSlide, #projectSlide, #contactSlide {
+  animation: animasi1 1s ease-out forwards;
 }
+
 #projectSlide img {
-    max-width: 100%;
-    height: auto;
-    width: 150px;
-    display: flex;
-    margin: 5px;
+  max-width: 100%;
+  width: 250px;
+  height: auto;
 }
-#kode {
-    max-width: 100%;
-    height: auto;
-    width: 200px !important;
-    display: flex;
-    margin: 5px;
-}
-
-#contactSlide {
-    display: none;
-    animation: animasi1 1s ease-out forwards;
-}
-
     </style>
 </head>
 <body>
-    
     
     <h1 id='judul'>Porto<span>folio</span></h1>
     <div>
@@ -204,172 +119,182 @@ h4 {
     </div>
     
     <!-- home slide -->
-    <div id='homeSlide'>
-        <h1>
-            Hai, namaku Rifqi<br>
+    <div class='hidden' id='homeSlide'>
+        <h1 class='introduction'>
+            Hai, saya Rifqi<br>
             FullStack Developer
         </h1>
         
-        <h4 id='teks'></h4>
+        <h3 id='teks'></h3>
     </div>
     
-    <div id='character'>
+    <div class='hidden' id='character'>
         <img src='https://i.imgur.com/AOuoU1b.png'>
     </div>
     
     
     <!-- about slide -->
-    <div id='aboutSlide'>
+    <div class='hidden' id='aboutSlide'>
         <p>
-        Aku adalah Fullstack Developer pemula yang baru belajar membuat web selama 2 bulan di usiaku yang sekarang 15 tahun. Lulusan dari SMP NU 1 Hasyim Asy'ari Tarub, Tegal, Jawa Tengah. Aku belajar membuat web secara otodidak dari berbagai sumber internet.<br>
-        
-        Untuk sementara aku hanya bisa membuat web sederhana, Namun sebentar lagi tahun ajaran baru dan aku akan bersekolah di SMK dengan jurusan Rekayasa Perangkat Lunak(RPL) serta belajar mengenai web lebih dalam.
+        Saya adalah Web Developer pemula yang baru belajar membuat web selama sekitar 3 bulan, baru bersekolah di SMK Insan Mulia Kramat dengan program keahlian Rekayasa Perangkat Lunak(RPL). Bisa dibilang sebelumnya saya belajar pemrograman secara otodidak menggunakan HandPhone. Usia saya saat ini adalah 15 tahun.
         </p>
         
-    </div>
-    <div id='imageAbout'>
-        <img src='https://i.imgur.com/PvMZj6y.png'>
-        <img src='https://i.imgur.com/1tHhpS3.png'>
     </div>
     
     
     <!-- skill slide -->
-    <div id='skillSlide'>
+    <div class='hidden' id='skillSlide'>
         <p>
-            Karena baru 2 bulan belajar membuat web aku baru menguasai dasar-dasar dari HTML, CSS, Dan JavaScript. <br>
+            Saya menguasai dasar-dasar hingga menengah dari HTML, CSS, Dan JavaScript. <br>
             
-            Untuk HTML aku memahami tentang struktur dasar tag HTML, Tag, Elemen, Atribut, Dan banyak Tag lainnya yang sering digunakan seorang developer untuk membuat kerangka web.<br>
+            Untuk HTML saya memahami tentang struktur dasar tag HTML, Tag, Elemen, Atribut, Dan banyak Tag lainnya yang sering digunakan seorang developer untuk membuat kerangka website.<br>
             
-            Untuk CSS aku memahami tentang selector, Declaration block, Property dan Value.<br>
+            Untuk CSS saya memahami tentang selector, Declaration block, Pembuatan animasi elemen, Property dan Value.<br>
             
-            Dan untuk logika JavaScript aku memahami tentang Data Types (Seperti string, number, boolean, object dan lain-lain), Variable, Operator, fungsi, dan algoritma dasar seperti Conditional(else/if/else if statement).
+            Dan untuk logika JavaScript saya memahami tentang Data Types (Seperti string, number, boolean, object dan lain-lain), Variabel, Operator, Fungsi, cara menggunakan Library & <i>Application Programming Interface</i>(API), dan Loops(perulangan) serta Manipulasi DOM untuk membuat website yang lebih interaktif.
         </p>
     </div>
     
     
     <!-- project slide -->
-    <div id='projectSlide'>
+    <div class='hidden' id='projectSlide'>
         <p>
-            Sebagai pemula aku belum memiliki proyek komersial, aku baru membuat 3 proyek pribadi(termasuk web portofolio), salah satunya adalah web ku yang berjudul "Everything About Tegal". <br>
-            Di web ini kamu akan diajak berkeliling di Tegal, melihat tempat-tempat populer, kuliner, mempelajari tentang tradisi, sejarah dan bahasa di tegal.
-            
+          Selama 3 bulan belajar total saya sudah membuat 8 project website. Berikut 2 project terbaik milik saya:<br>
+          <br>
+          
+          1. <b>Project: Pixel Art Canvas Grid</b><br>
+          Di project ini pengguna bisa membuat karyanya dengan lukisan berbentuk piksel-piksel yang ukurannya bisa di sesuaikan dengan kebutuhan pengguna. 
         </p>
-        <img src='https://i.imgur.com/6e3uPzG.png'>
-        <img src='https://i.imgur.com/hcyouwB.png'>
-        <p>
-            Fitur: <br>
-            Efek ketik teks dan Animasi gambar yang muncul dari samping. <br>
-            Masalah saat pembuatan: <br>
-            Efek ketik yang rawan error/bug saat berganti masuk slide, pindah ke slide lain saat efek ketik belum selesai dan kondisi semacamnya.<br>
-            Solusi untuk masalah: <br>
-            Membuat fungsi untuk mereset tampilan teks dan menghentikan animasi yang sedang berjalan, menggunakan variable indeks yang berbeda untuk setiap animasi teks.
-            
-        </p>
+        <div class='image'>
+          <img src='https://i.imgur.com/oeeQvsr.jpeg'>
+          <img src='https://i.imgur.com/YEtNboD.png'>
+        </div>
         
-        <img id='kode' src='https://i.imgur.com/eoQudjv.png'>
-        <a href='https://hanyaorangbiasa787-pixel.github.io/web-project/tegal.html'>Masuk ke web</a>
-        <a href='https://hanyaorangbiasa787-pixel.github.io/web-project/'>Project lainnya</a>
+        <p>
+          Disini logika utamanya ada di pembuatan setiap pikselnya, di javascript saya menggunakan logika <b>Nested Loop/perulangan yang berada di dalam perulangan lainnya.</b> Cara kerjanya: setiap 1 kali perulangan luar (outer loop) berjalan, perulangan dalam (inner loop) akan diselesaikan sepenuhnya. <br>
+          <br>
+          2. <b>Project: Weather App</b><br>
+          Ini adalah website pertama saya yang terhubung dengan dunia luar dengan menggunakan <i><b>Application Programming Interface</b></i>(API) untuk mendapatkan data cuaca dari <b>OpenWeatherMap</b>.<br>
+          Disini pengguna bisa dengan mudah dan cepat mengakses data cuaca di seluruh wilayah di dunia.
+        </p>
+        <img src='https://i.imgur.com/2ZHGehK.png'>
+        <p>Berikut adalah link yang mengarah langsung ke website yang saya sebutkan tadi dan jika anda ingin melihat website saya yang lainnya:<br>
+        </p>
+        <a href='https://zenstory24.github.io/1-day-1-project/project1.html'>Note Book</a> <br>
+        <a href='https://zenstory24.github.io/1-day-1-project/project2.html'>Kalkulator Digital</a> <br>
+        <a href='https://zenstory24.github.io/1-day-1-project/project3.html'>Weather App</a> <br>
+        <a href='https://zenstory24.github.io/1-day-1-project/project4.html'>Game Tebak Angka</a> <br>
+        <a href='https://zenstory24.github.io/1-day-1-project/project5.html'>QR Code Generator</a> <br>
+        <a href='https://zenstory24.github.io/1-day-1-project/project6.html'>Pixel Art Canvas Grid</a> <br>
+        
     </div>
     
     
     <!-- contact slide -->
-    <div id='contactSlide'>
+    <div class='hidden' id='contactSlide'>
         <p>
             coming soon...
         </p>
     </div>
     </div>
     <script>
-        const homeSlide = document.getElementById('homeSlide')
-const aboutSlide = document.getElementById('aboutSlide')
-const skillSlide = document.getElementById('skillSlide')
-const projectSlide = document.getElementById('projectSlide')
-const contactSlide = document.getElementById('contactSlide')
+      const homeSlide = document.getElementById('homeSlide');
+const aboutSlide = document.getElementById('aboutSlide');
+const skillSlide = document.getElementById('skillSlide');
+const projectSlide = document.getElementById('projectSlide');
+const contactSlide = document.getElementById('contactSlide');
 
+const homeButton = document.getElementById('homeButton');
+const aboutButton = document.getElementById('aboutButton');
+const skillButton = document.getElementById('skillButton');
+const projectButton = document.getElementById('projectButton');
+const contactButton = document.getElementById('contactButton');
 
-const homeButton = document.getElementById('homeButton')
-const aboutButton = document.getElementById('aboutButton')
-const skillButton = document.getElementById('skillButton')
-const projectButton = document.getElementById('projectButton')
-const contactButton = document.getElementById('contactButton')
+const character = document.getElementById('character');
+let text = 'Membangun antarmuka web yang interaktif';
+let teks = document.getElementById('teks');
+let i = 0;
 
+const typeText = () => {
+  if (i < text.length) {
+    teks.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeText, 85);
+  }
+}
 
-const image1 = document.getElementById('character')
-const imageAbout = document.getElementById('imageAbout')
+const moveToHomeSlide = () => {
+  homeSlide.classList.remove('hidden');
+  character.classList.remove('hidden');
+  aboutSlide.classList.add('hidden');
+  skillSlide.classList.add('hidden');
+  projectSlide.classList.add('hidden');
+  contactSlide.classList.add('hidden');
+}
 
+const moveToAboutSlide = () => {
+  homeSlide.classList.add('hidden');
+  character.classList.add('hidden');
+  aboutSlide.classList.remove('hidden');
+  skillSlide.classList.add('hidden');
+  projectSlide.classList.add('hidden');
+  contactSlide.classList.add('hidden');
+}
 
-addEventListener('DOMContentLoaded', function() {
-    typeText(0)
-});
-let typingTimeout;
-const text = ' Membangun antarmuka web yang interaktif';
-function typeText (indeks = 0) {
-    if (indeks < text.length) {
-        document.getElementById('teks').innerHTML += text.charAt(indeks);
-        typingTimeout = setTimeout(() => typeText(indeks +1), 65);
-    }
+const moveToSkillSlide = () => {
+  homeSlide.classList.add('hidden');
+  character.classList.add('hidden');
+  aboutSlide.classList.add('hidden');
+  skillSlide.classList.remove('hidden');
+  projectSlide.classList.add('hidden');
+  contactSlide.classList.add('hidden');
+}
+
+const moveToProjectSlide = () => {
+  homeSlide.classList.add('hidden');
+  character.classList.add('hidden');
+  aboutSlide.classList.add('hidden');
+  skillSlide.classList.add('hidden');
+  projectSlide.classList.remove('hidden');
+  contactSlide.classList.add('hidden');
+}
+
+const moveToContactSlide = () => {
+  homeSlide.classList.add('hidden');
+  character.classList.add('hidden');
+  aboutSlide.classList.add('hidden');
+  skillSlide.classList.add('hidden');
+  projectSlide.classList.add('hidden');
+  contactSlide.classList.remove('hidden');
 }
 
 
 
-
-window.addEventListener('load', function() {
-    homeSlide.style.display ='block';
-    image1.style.display='block';
-    console.log('file downloaded');
-});
 homeButton.addEventListener('click', function() {
-    image1.style.display='block';
-    homeSlide.style.display='block';
-    aboutSlide.style.display='none';
-    imageAbout.style.display='none';
-    skillSlide.style.display='none';
-    projectSlide.style.display='none';
-    contactSlide.style.display='none';
+  moveToHomeSlide();
 });
-
 
 aboutButton.addEventListener('click', function() {
-    image1.style.display='none';
-    homeSlide.style.display='none';
-    aboutSlide.style.display='block';
-    imageAbout.style.display='block';
-    skillSlide.style.display='none';
-    projectSlide.style.display='none';
-    contactSlide.style.display='none';
+  moveToAboutSlide();
 });
 
 skillButton.addEventListener('click', function() {
-    image1.style.display='none';
-    homeSlide.style.display='none';
-    aboutSlide.style.display='none';
-    imageAbout.style.display='none';
-    skillSlide.style.display='block';
-    projectSlide.style.display='none';
-    contactSlide.style.display='none';
+  moveToSkillSlide();
 });
 
 projectButton.addEventListener('click', function() {
-    image1.style.display='none';
-    homeSlide.style.display='none';
-    aboutSlide.style.display='none';
-    imageAbout.style.display='none';
-    skillSlide.style.display='none';
-    projectSlide.style.display='block';
-    contactSlide.style.display='none';
+  moveToProjectSlide();
 });
 
 contactButton.addEventListener('click', function() {
-    image1.style.display='none';
-    homeSlide.style.display='none';
-    aboutSlide.style.display='none';
-    imageAbout.style.display='none';
-    skillSlide.style.display='none';
-    projectSlide.style.display='none';
-    contactSlide.style.display='block';
+  moveToContactSlide();
 });
 
-
+window.addEventListener('load', function() {
+  typeText();
+  moveToHomeSlide();
+  console.log('semoga author bisa juara LKS');
+});
     </script>
 </body>
 </html>
