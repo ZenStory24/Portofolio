@@ -105,6 +105,34 @@ button:hover {
   width: 250px;
   height: auto;
 }
+
+.medsos-container img {
+    max-width: 34px;
+    height: auto;
+}
+
+.medsos-container {
+  display: flex;
+  gap: 12px;
+}
+
+.medsos-container button {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInOneByOne 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: calc(var(--index) * 0.5s);
+  padding: 10px 20px;
+  border: none;
+}
+
+@keyframes slideInOneByOne {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -128,6 +156,32 @@ button:hover {
         </h1>
         
         <h3 id='teks'></h3>
+        
+        <div class='medsos-container'>
+            <button>
+                <a href='https://discordapp.com/users/1533961073085124762'>
+                    <img src='https://zenstory24.github.io/Portofolio/dc.png'>
+                </a>
+            </button>
+            
+            <button>
+                <a href='https://www.tiktok.com/@zenstory.js?_r=1&_t=ZS-991xBsxshKH'>
+                    <img src='https://zenstory24.github.io/Portofolio/tt.png'>
+                </a>
+            </button>
+            
+            <button>
+                <a href='https://x.com/zenstoryhe'>
+                    <img src='https://zenstory24.github.io/Portofolio/x.png'>
+                </a>
+            </button>
+            
+            <button>
+                <a href='https://www.instagram.com/zenstory.js?igsh=MTBjaXlyd2k1aXQ5cw=='>
+                    <img src='https://zenstory24.github.io/Portofolio/ig.png'>
+                </a>
+            </button>
+        </div>
     </div>
     
     <div class='hidden' id='character'>
