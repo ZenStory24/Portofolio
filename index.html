@@ -6,7 +6,7 @@
     <meta name="author" content="rifqi">
     <title>Portofolio</title>
     <style>
-      @keyframes animasi1  {
+        @keyframes animasi1  {
     from {
         transform: translateX(-30%);
         opacity: 0;
@@ -24,6 +24,17 @@
     to {
         transform: translateY(10%);
         opacity: 1;
+    }
+}
+
+@keyframes animasi3 {
+    from {
+        opacity: 0;
+        transform: translateY(5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -101,7 +112,7 @@ button:hover {
     color: aqua;
 }
 
-#aboutSlide, #skillSlide, #projectSlide, #contactSlide {
+#projectSlide, #contactSlide {
   animation: animasi1 1s ease-out forwards;
 }
 
@@ -137,7 +148,47 @@ button:hover {
   }
 }
 
+#aboutSlide {
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 230px;
+    padding: 5px;
+    background-color: #6969697e;
+    transition: transform 1s ease, border-left-width 0.4s ease;
+    animation: animasi3 1s ease-out forwards;
+}
 
+#aboutSlide:hover {
+    border-left: 5px solid aquamarine;
+}
+
+#d1, #d2, #d3, #d4 {
+    animation-name: animasi3;
+    animation-duration: 1s;
+    border-radius: 4px;
+    border: 1px solid black;
+    width: 325px;
+    padding: 5px;
+    background-color: #6969697e;
+    transition: transform 1s ease, border-left-width 0.4s ease;
+    margin: 8px;
+}
+
+#d1:hover {
+    border-left: 5px solid aquamarine;
+}
+
+#d2:hover {
+    border-left: 5px solid aquamarine;
+}
+
+#d3:hover {
+    border-left: 5px solid aquamarine;
+}
+
+#d4:hover {
+    border-left: 5px solid aquamarine;
+}
     </style>
 </head>
 <body>
@@ -197,23 +248,43 @@ button:hover {
     <!-- about slide -->
     <div class='hidden' id='aboutSlide'>
         <p>
-        Saya adalah Web Developer pemula yang baru belajar membuat web selama sekitar 3 bulan, baru bersekolah di SMK Insan Mulia Kramat dengan program keahlian Rekayasa Perangkat Lunak(RPL). Bisa dibilang sebelumnya saya belajar pemrograman secara otodidak menggunakan HandPhone. Usia saya saat ini adalah 15 tahun.
+        <b>Saya adalah seorang Web Developer pemula yang telah menekuni pemrograman selama kurang lebih 4 bulan. Saat ini saya bersekolah di SMK Insan Mulia Kramat, mengambil program keahlian Rekayasa Perangkat Lunak (RPL). Sebelum masuk SMK, saya sudah lebih dulu belajar pemrograman secara otodidak melalui HandPhone.
+Meski masih di usia 15 tahun, saya percaya bahwa konsistensi belajar dan rasa ingin tahu adalah kunci untuk terus berkembang di bidang teknologi. Saya senang membangun hal-hal kecil yang interaktif dan selalu antusias mencoba tantangan baru dalam coding.</b>
         </p>
         
     </div>
     
     
     <!-- skill slide -->
-    <div class='hidden' id='skillSlide'>
-        <p><b>
-            Saya menguasai dasar-dasar hingga menengah dari HTML, CSS, Dan JavaScript. <br>
-            
-            <br>HTML: saya memahami tentang struktur dasar tag HTML, Tag, Elemen, Atribut, Dan banyak Tag lainnya yang sering digunakan seorang developer untuk membuat kerangka website.<br>
-            
-            <br>CSS: saya memahami tentang selector, Declaration block, Pembuatan animasi elemen, Property dan Value.<br>
-            
-            <br>logika JavaScript: saya memahami tentang Data Types (Seperti string, number, boolean, object dan lain-lain), Variabel, Operator, Fungsi, cara menggunakan Library & <i>Application Programming Interface</i>(API), dan Loops(perulangan) serta Manipulasi DOM untuk membuat website yang lebih interaktif.
-        </b></p>
+    <div id='skillSlide'>
+        <div class='hidden' id='d1'>
+            <p>Saya menguasai dasar-dasar hingga level menengah dalam HTML, CSS, dan JavaScript, yang menjadi fondasi utama dalam setiap project yang saya buat.
+            </p>
+        </div>
+        
+        <div class='hidden' id='d2'>
+            <p>
+                <b>
+                    HTML — Memahami struktur dokumen, elemen, tag, dan atribut yang digunakan untuk membangun kerangka sebuah website.
+                </b>
+            </p>
+        </div>
+        
+        <div class='hidden' id='d3'>
+            <p>
+                <b>
+                    CSS — Memahami selector, deklarasi properti dan value, hingga pembuatan animasi sederhana untuk mempercantik tampilan.
+                </b>
+            </p>
+        </div>
+        
+        <div class='' id='d4'>
+            <p>
+                <b>
+                    JavaScript — Memahami konsep dasar seperti tipe data (string, number, boolean, object, dll), variabel, operator, fungsi, perulangan (loops), manipulasi DOM, hingga penggunaan library dan API untuk membuat website yang lebih interaktif dan dinamis.
+                </b>
+            </p>
+        </div>
     </div>
     
     
@@ -273,12 +344,14 @@ button:hover {
     <!-- contact slide -->
     <div class='hidden' id='contactSlide'>
         <p>
-            coming soon...
+            Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya!<br><br>
+            Email: <b>zenstory.js@gmail.com</b><br>
+            Github: <b>ZenStory24</b>
         </p>
     </div>
     </div>
     <script>
-      const homeSlide = document.getElementById('homeSlide');
+        const homeSlide = document.getElementById('homeSlide');
 const aboutSlide = document.getElementById('aboutSlide');
 const skillSlide = document.getElementById('skillSlide');
 const projectSlide = document.getElementById('projectSlide');
@@ -289,6 +362,11 @@ const aboutButton = document.getElementById('aboutButton');
 const skillButton = document.getElementById('skillButton');
 const projectButton = document.getElementById('projectButton');
 const contactButton = document.getElementById('contactButton');
+
+const d1 = document.getElementById('d1');
+const d2 = document.getElementById('d2');
+const d3 = document.getElementById('d3');
+const d4 = document.getElementById('d4');
 
 const character = document.getElementById('character');
 let text = 'Membangun antarmuka web yang interaktif';
@@ -303,49 +381,82 @@ const typeText = () => {
   }
 }
 
+function showD1() {
+    d1.classList.remove('hidden');
+}
+
+function showD2() {
+  setTimeout(() => {
+    d2.classList.remove('hidden');
+  }, 300);
+}
+
+function showD3() {
+  setTimeout(() => {
+    d3.classList.remove('hidden');
+  }, 600);
+}
+
+function showD4() {
+  setTimeout(() => {
+    d4.classList.remove('hidden');
+  }, 900);
+}
+
+function hideD() {
+  d1.classList.add('hidden');
+  d2.classList.add('hidden');
+  d3.classList.add('hidden');
+  d4.classList.add('hidden');
+}
+
+
 const moveToHomeSlide = () => {
   homeSlide.classList.remove('hidden');
   character.classList.remove('hidden');
   aboutSlide.classList.add('hidden');
-  skillSlide.classList.add('hidden');
   projectSlide.classList.add('hidden');
   contactSlide.classList.add('hidden');
+  hideD();
 }
 
 const moveToAboutSlide = () => {
   homeSlide.classList.add('hidden');
   character.classList.add('hidden');
   aboutSlide.classList.remove('hidden');
-  skillSlide.classList.add('hidden');
   projectSlide.classList.add('hidden');
   contactSlide.classList.add('hidden');
+  hideD();
 }
 
 const moveToSkillSlide = () => {
   homeSlide.classList.add('hidden');
   character.classList.add('hidden');
   aboutSlide.classList.add('hidden');
-  skillSlide.classList.remove('hidden');
   projectSlide.classList.add('hidden');
   contactSlide.classList.add('hidden');
+  showD1();
+  showD2();
+  showD3();
+  showD4();
 }
 
 const moveToProjectSlide = () => {
   homeSlide.classList.add('hidden');
   character.classList.add('hidden');
   aboutSlide.classList.add('hidden');
-  skillSlide.classList.add('hidden');
   projectSlide.classList.remove('hidden');
   contactSlide.classList.add('hidden');
+  hideD();
 }
 
 const moveToContactSlide = () => {
   homeSlide.classList.add('hidden');
   character.classList.add('hidden');
   aboutSlide.classList.add('hidden');
-  skillSlide.classList.add('hidden');
   projectSlide.classList.add('hidden');
   contactSlide.classList.remove('hidden');
+  hideD();
 }
 
 
@@ -375,6 +486,8 @@ window.addEventListener('load', function() {
   moveToHomeSlide();
   console.log('semoga author bisa juara LKS');
 });
+
+hideD();
     </script>
 </body>
-</html>
+                                                                                                                                                </html>
